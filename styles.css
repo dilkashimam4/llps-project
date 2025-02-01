@@ -1,0 +1,799 @@
+/* General Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+
+
+}
+
+
+
+
+
+
+@keyframes appear{
+  from {
+    /* opacity: 0; */
+    transform: translateX(-50px);
+  }
+  to{
+    opacity:1;
+    transform: translateX(0px);
+  }
+}
+
+/* Slide-in Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Zoom-in Animation */
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* Header & Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #333;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header h1 a {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+}
+
+#nav-links li {
+  margin: 0 15px;
+}
+
+#nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Mobile Menu Icons */
+.hamburger-menu,
+.cross-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Menu */
+@media (max-width: 600px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  #nav-links {
+    display: none; /* Hide menu by default on mobile */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    z-index: 2;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li {
+    margin: 10px 0;
+  }
+
+  .cross-icon {
+    display: none;
+  }
+}
+
+/* Fix Hamburger Menu Display on Desktop */
+@media (min-width: 601px) {
+  .hamburger-menu, .cross-icon {
+    display: none !important;
+  }
+
+  #nav-links {
+    display: flex !important;
+    z-index: 2;
+  }
+}
+
+/* Hero Banner Slider */
+#hero-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* animation: appear linear; */
+
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+}.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-top: 20px;
+  background-color: #ffcc00;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e6b800;
+  transform: scale(1.1);
+}
+
+.cta-button:active {
+  background-color: #cc9900;
+}
+
+.cta-button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .caption {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+  
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out ;
+  
+}
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slide img {
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  animation: zoomIn 1s ease-in-out;
+  
+}
+
+/* Media Queries for Caption Size */
+@media (min-width: 768px) {
+  .caption {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .caption {
+    font-size: 1.8rem;
+    padding: 15px 30px;
+  }
+}
+
+
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: white;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  /* animation: fadeIn 1s ease-in-out forwards; */
+  animation: fadeIn linear;
+  /* animation: appear linear; */
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  
+
+}
+
+.about-text {
+  flex: 1;
+  animation: slideIn 1s ease-in-out forwards;
+  /* animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40% ; */
+
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-gif {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomIn 1s ease-in-out forwards;
+
+}
+
+.about-gif img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-gif img {
+    max-width: 80%;
+  }
+}
+
+
+
+
+
+#services {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #222, #444);
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+.service-card img {
+  max-width: 100px;
+  border-radius: 10px;
+  background-color: white;
+  height: auto;
+  margin-bottom: 15px;
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Slide-up Animation */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+}
+.whatsapp-float img {
+  width: 100%;
+}
+
+
+
+/* General styling for the section */
+/* General styling for the section */
+#products {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.product-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.product-slide {
+  display: flex;
+  gap: 20px;
+}
+
+.product-item {
+  animation: slide 10s infinite linear; /* Controls the sliding speed */
+  width: 200px; /* Adjust width based on your design */
+  flex: 0 0 250px;
+  margin: 0 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect for the product card */
+.product-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling */
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-img {
+  transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-details h3 {
+  font-size: 1.6rem;
+  margin: 15px 0 10px;
+  color: #333;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.product-details p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #0505A9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Hover effect for the CTA button */
+.cta-button:hover {
+  background-color: #333;
+  transform: translateY(-5px);
+}
+
+/* Animation for continuous sliding */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Optional: If you'd like the items to stop after one cycle */
+.product-slide:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .product-item {
+    width: 100%; /* Full width on mobile screens */
+    margin: 10px 0;
+  }
+}
+
+
+
+/* Contact Us Form Styling */
+.contact-container {
+  width: 80%;
+  max-width: 300px;
+  margin: 50px auto; /* Centered Horizontally */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+.title {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+  position: relative;
+  margin: 15px 0;
+}
+
+input, textarea {
+  width:92%;
+  padding: 12px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #ffcc00;
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
+}
+
+/* Floating Labels */
+label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+input:focus + label, 
+input:valid + label,
+textarea:focus + label, 
+textarea:valid + label {
+  top: -12px;
+  left: 10px;
+  /* bottom: 10px; */
+  font-size: 12px;
+  color: #ffcc00;
+}
+
+/* Button */
+.btn {
+  background: #ffcc00;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.btn:hover {
+  background: #ffdb4d;
+  transform: scale(1.05);
+}
+
+/* Message Status */
+#statusMessage {
+  margin-top: 15px;
+  color: white;
+  font-weight: 600;
+}
+@media (max-width: 480px) {
+  .contact-container {
+      width: 95%;
+  }
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #000);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Brand & Description */
+.footer-content {
+  max-width: 400px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffcc00;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  letter-spacing: 2px;
+  color: #ffdb4d;
+}
+
+/* Social Icons */
+.social-icons {
+  margin: 15px 0;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 8px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  background: #ffcc00;
+  color: black;
+}
+
+/* Footer Links */
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+  text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Floating Animation */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: floatingAnimation 5s infinite alternate ease-in-out;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: floatingAnimation 6s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatingAnimation {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(20px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .footer-links a {
+      margin: 5px 0;
+  }
+}
