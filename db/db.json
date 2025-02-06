@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "Silent Digital Generator 5kW",
+      "description": "High-performance silent generator for industrial use.",
+      "image": "image/comm.jpeg",
+      "price": "$1500"
+    },
+    {
+      "id": 2,
+      "name": "Silent Digital Generator 10kW",
+      "description": "Reliable and efficient power solution.",
+      "image": "image/hari162.jpeg",
+      "price": "$2500"
+    },
+    {
+      "id": 3,
+      "name": "Transformer 50kVA",
+      "description": "Premium quality transformer for power stability.",
+      "image": "image/hari250.jpeg",
+      "price": "$3500"
+    },
+    {
+        "id": 4,
+        "name": "Silent Digital Generator 25kW",
+        "description": "High-performance silent generator for industrial use.",
+        "image": "image/comm.jpeg",
+        "price": "$1500"
+      },
+      {
+        "id": 5,
+        "name": "Silent Digital Generator 20kW",
+        "description": "Reliable and efficient power solution.",
+        "image": "image/hari162.jpeg",
+        "price": "$2500"
+      },
+      {
+        "id": 6,
+        "name": "Transformer 60kVA",
+        "description": "Premium quality transformer for power stability.",
+        "image": "image/hari250.jpeg",
+        "price": "$3500"
+      }
+  ]
+  
