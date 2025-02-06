@@ -93,16 +93,16 @@ productSlide.addEventListener('mouseout', () => {
 
 
 
-// document.getElementById('contactForm').addEventListener('submit', function(event) {
-//   event.preventDefault();
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-//   let statusMessage = document.getElementById('statusMessage');
-//   statusMessage.textContent = "Sending...";
-//   statusMessage.style.color = "yellow";
+  let statusMessage = document.getElementById('statusMessage');
+  statusMessage.textContent = "Sending...";
+  statusMessage.style.color = "yellow";
 
-//   setTimeout(() => {
-//       statusMessage.textContent = "Message Sent Successfully!";
-//       statusMessage.style.color = "lightgreen";
-//       this.reset();
-//   }, 2000);
-// });
+  setTimeout(() => {
+      statusMessage.textContent = "Message Sent Successfully!";
+      statusMessage.style.color = "lightgreen";
+      this.reset();
+  }, 2000);
+});
